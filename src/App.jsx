@@ -1,28 +1,32 @@
-import { useState } from 'react'
+import React from 'react';
+import HeroSection from './components/HeroSection';
+import StatsBar from './components/StatsBar';
+import NewsCarousel from './components/NewsCarousel';
+import UpcomingRaceCard from './components/UpcomingRaceCard';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+    <div className="min-h-screen bg-neutral-950 text-white">
+      <HeroSection />
+      <StatsBar />
+      <NewsCarousel />
+      <UpcomingRaceCard />
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+function Footer() {
+  return (
+    <footer className="border-t border-white/10 bg-neutral-950 py-8 text-white/70">
+      <div className="mx-auto max-w-7xl px-6 text-sm">
+        <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+          <p>F1 Live — Unofficial fan experience. Data is illustrative.</p>
+          <p>
+            Built with React, Tailwind, and a Spline-powered hero. Theme: automotive, dynamic, high-energy.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
